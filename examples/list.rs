@@ -1,4 +1,5 @@
 extern crate getpocket;
+use dotenv::dotenv;
 
 use getpocket::{retrieving::RetrievingExt, GetPocket};
 
@@ -7,6 +8,8 @@ mod lib;
 
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
+
     let get_pocket: GetPocket = lib::init_get_pocket().await;
 
     let resp_list = get_pocket.list_of_items().await;

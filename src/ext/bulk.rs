@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use crate::{
     client::GetPocket,
     ext::{modifying::*, tags::*},

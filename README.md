@@ -42,9 +42,9 @@ The GetPocket token can be obtained through the built-in `GetPocket::init` metho
 
 ```rust
 fn main() {
-    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("ENV must be set");
-    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("ENV must be set");
-    let access_token = std::env::var("GET_POCKET_ACCESS_TOKEN").expect("ENV must be set");
+    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("GET_POCKET_CONSUMER_KEY must be set");
+    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("GET_POCKET_REDIRECT_URL must be set");
+    let access_token = std::env::var("GET_POCKET_ACCESS_TOKEN").expect("GET_POCKET_ACCESS_TOKEN must be set");
 
     let get_pocket = GetPocket::new(consumer_key, redirect_url, access_token)
         .await
@@ -98,9 +98,9 @@ RecordItem {
 
 ```rust
 fn main() {
-    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("ENV must be set");
-    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("ENV must be set");
-    let access_token = std::env::var("GET_POCKET_ACCESS_TOKEN").expect("ENV must be set");
+    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("GET_POCKET_CONSUMER_KEY must be set");
+    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("GET_POCKET_REDIRECT_URL must be set");
+    let access_token = std::env::var("GET_POCKET_ACCESS_TOKEN").expect("GET_POCKET_ACCESS_TOKEN must be set");
 
     let get_pocket = GetPocket::new(consumer_key, redirect_url, access_token)
         .await
@@ -160,8 +160,8 @@ RecordAdded {
 
 ``` rust
 async fn main() {
-    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("ENV must be set");
-    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("ENV must be set");
+    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("GET_POCKET_CONSUMER_KEY must be set");
+    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("GET_POCKET_REDIRECT_URL must be set");
 
     // This is necessary to set one times and save the token
     let pocket = GetPocket::init(consumer_key, redirect_url, |access_token| {
@@ -204,8 +204,8 @@ async fn main() {
 }
 
 async fn init_get_pocket() -> GetPocket {
-    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("ENV must be set");
-    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("ENV must be set");
+    let consumer_key = std::env::var("GET_POCKET_CONSUMER_KEY").expect("GET_POCKET_CONSUMER_KEY must be set");
+    let redirect_url = std::env::var("GET_POCKET_REDIRECT_URL").expect("GET_POCKET_REDIRECT_URL must be set");
     let mut current_path = std::env::current_exe().unwrap();
     current_path.pop();
 

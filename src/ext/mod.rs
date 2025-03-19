@@ -1,3 +1,4 @@
+#![allow(unused_imports)]
 pub mod retrieving;
 pub use retrieving::RetrievingExt;
 

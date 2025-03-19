@@ -11,8 +11,10 @@ lazy_static! {
 use std::{env, fs, path};
 
 pub async fn init_get_pocket() -> GetPocket {
-    let consumer_key = env::var("GET_POCKET_CONSUMER_KEY").expect("ENV must be set");
-    let redirect_url = env::var("GET_POCKET_REDIRECT_URL").expect("ENV must be set");
+    let consumer_key =
+        env::var("GET_POCKET_CONSUMER_KEY").expect("GET_POCKET_CONSUMER_KEY must be set");
+    let redirect_url =
+        env::var("GET_POCKET_REDIRECT_URL").expect("GET_POCKET_REDIRECT_URL must be set");
     let tmp_dir = std::env::temp_dir().display().to_string();
     let cfg_path = format!("{}/get_pocket_access_token", tmp_dir);
     match path::Path::new(&cfg_path).exists() {
