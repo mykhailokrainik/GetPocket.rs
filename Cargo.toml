@@ -8,7 +8,6 @@ license-file = "LICENSE.txt"
 rust-version = "1.65"
 authors = ["Mykhailo Krainik <code.replica558@passmail.net>"]
 keywords = ["getpocket", "afterread", "pocket", "api", "rust"]
-categories = ["api"]
 readme = "README.md"
 exclude = [
     ".gitignore",
@@ -41,6 +40,6 @@ name = "modify"
 path = "examples/modify.rs"
 
 [dev-dependencies]
-dotenv = "0.15.0"
+dotenv = "0.14.1"
 webbrowser = "0.8.3"
 lazy_static = "1.4.0"
