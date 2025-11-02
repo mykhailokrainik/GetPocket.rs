@@ -79,16 +79,40 @@ pub struct RequestDeleteTags {
 
 #[async_trait]
 pub trait TagsExt {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tags_add(&self, params: &RequestAddTags) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tags_remove(&self, params: &RequestRemoveTags) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tags_replace(&self, params: &RequestReplaceTags) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tags_clear(&self, params: &RequestClearTags) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tag_rename(&self, params: &RequestRenameTags) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn tag_delete(&self, params: &RequestDeleteTags) -> Result<RecordModified>;
 }
 

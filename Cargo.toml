@@ -1,6 +1,6 @@
 [package]
 name = "getpocket"
-version = "0.2.5-rc3.1"
+version = "0.2.6"
 edition = "2021"
 description = "Rust crate for GetPocket API (https://getpocket.com/)"
 repository = "https://github.com/misha-krainik/GetPocket.rs"

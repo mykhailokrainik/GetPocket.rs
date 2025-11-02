@@ -34,6 +34,10 @@ pub struct RequestParams<'a> {
 
 #[async_trait]
 pub trait AddingExt {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn add_item_with_params<'a>(
         &self,
         url: &'a str,
@@ -42,6 +46,10 @@ pub trait AddingExt {
         tweet_id: Option<&'a str>,
     ) -> Result<RecordAdded>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn add_item<'a>(&self, url: &'a str) -> Result<RecordAdded>;
 }
 

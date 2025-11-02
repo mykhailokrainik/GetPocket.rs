@@ -56,6 +56,10 @@ struct RequestParams<'a> {
 
 #[async_trait]
 pub trait RetrievingExt {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn list_of_items_with_params<'a>(
         &self,
         state: RecordItemState,
@@ -71,8 +75,16 @@ pub trait RetrievingExt {
         count: i32,
     ) -> Result<RecordItem>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn list_of_items_paginate(&self, offset: i32, count: i32) -> Result<RecordItem>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn list_of_items(&self) -> Result<RecordItem>;
 }
 

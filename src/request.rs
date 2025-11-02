@@ -7,6 +7,10 @@ use thiserror::Error;
 pub struct ApiRequestError<'a>(u32, &'a str);
 
 impl ApiRequestError<'_> {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     pub fn handler_status(status_code: StatusCode) -> Result<()> {
         match status_code {
             StatusCode::BAD_REQUEST => bail!(ApiRequestError(400, "Invalid request, please make sure you follow the documentation for proper syntax.")),

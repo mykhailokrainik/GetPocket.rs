@@ -5,6 +5,11 @@ https://getpocket.com/developer/docs/overview
 
 [![Build](https://github.com/mikhail-krainik/getpocket/actions/workflows/rust.yml/badge.svg)](https://github.com/mikhail-krainik/getpocket/actions/workflows/rust.yml) [![Publish](https://github.com/misha-krainik/GetPocket.rs/actions/workflows/release.yml/badge.svg)](https://github.com/misha-krainik/GetPocket.rs/actions/workflows/release.yml)
 
+## Notice
+
+⚠️ **Mozilla has announced they are shutting down the Pocket servers. This crate will be fully rewritten to provide a self-hosted solution for storing articles and site summaries, similar to what Mozilla Pocket offered before.**
+
+
 ### Crates.io
 
 https://crates.io/crates/getpocket
@@ -20,7 +25,7 @@ cargo add getpocket
 ```
 
 ```rust
-use getpocket::{adding::AddingExt, GetPocket}; 
+use getpocket::{adding::AddingExt, GetPocket};
 
 let get_pocket = GetPocket::new(consumer_key, redirect_url, access_token).await?;
 get_pocket.add_item("https://getpocket.com/developer/docs/v3/add").await?;
@@ -312,12 +317,12 @@ cargo test
 
 ### Dependencies
 
-* tokio 
+* tokio
 * reqwest
 * async-trait
-* serde 
+* serde
 * serde_json
-* serde_qs 
+* serde_qs
 * anyhow
 * thiserror
 

@@ -25,26 +25,6 @@ pub struct RecordModified {
     pub data: Option<serde_json::Value>,
 }
 
-// #[derive(Debug, Serialize)]
-// struct RequestParams<'a, T> {
-//     consumer_key: &'a str,
-//     access_token: &'a str,
-//     actions: T,
-// }
-
-// impl<'a, T> RequestParams<'a, T> {
-//     fn try_new(client: &'a GetPocket, actions: T) -> Result<Self> {
-//         match &client.token.access_token {
-//             Some(access_token) => Ok(Self {
-//                 consumer_key: &client.consumer_key,
-//                 access_token: access_token,
-//                 actions,
-//             }),
-//             None => bail!(ModifyingError::InvalidParams("No access_token")),
-//         }
-//     }
-// }
-
 #[derive(Debug, Serialize)]
 pub enum Action {
     #[serde(rename = "archive")]
@@ -109,21 +89,41 @@ pub struct RequestDelete {
     time: Option<i32>,
 }
 
-/// <https://getpocket.com/developer/docs/v3/modify>   
+/// <https://getpocket.com/developer/docs/v3/modify>
 #[async_trait]
 pub trait ModifyingExt {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     /// Move an item to the user's archive
     async fn archive(&self, item_id: i64) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     /// Re-add (unarchive) an item to the user's list
     async fn readd(&self, item_id: i64) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     /// Mark an item as a favorite
     async fn favorite(&self, item_id: i64) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     /// Remove an item from the user's favorites
     async fn unfavorite(&self, item_id: i64) -> Result<RecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     /// Permanently remove an item from the user's account
     async fn delete(&self, item_id: i64) -> Result<RecordModified>;
 }

@@ -71,15 +71,27 @@ pub struct Token {
 }
 
 impl<'a> Token {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     fn new() -> Self {
         Self::default()
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     fn set_code(&mut self, code: &str) {
         let code = code.to_string();
         self.code = Some(code);
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     fn set_access_token(&mut self, access_token: &str) {
         let access_token = access_token.to_string();
         self.access_token = Some(access_token);
@@ -100,6 +112,10 @@ pub struct GetPocket {
 }
 
 impl GetPocket {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     pub async fn init<F, C>(
         consumer_key: String,
         redirect_uri: String,
@@ -134,6 +150,10 @@ impl GetPocket {
         }
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     pub async fn new(
         consumer_key: String,
         redirect_uri: String,
@@ -155,6 +175,10 @@ impl GetPocket {
         Ok(get_pocket)
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     pub async fn send<T>(&self, params: T) -> Result<RecordSendDirect>
     where
         T: Serialize,
@@ -200,6 +224,10 @@ impl GetPocket {
         }
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn token_code(&mut self) -> Result<String> {
         if let Some(access_token) = &self.token.access_token {
             return Ok(access_token.clone());
@@ -236,6 +264,10 @@ impl GetPocket {
             .map_err(Into::into)
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn get_access_token_manual_open<F>(
         &mut self,
         f: F,
@@ -288,6 +320,10 @@ impl GetPocket {
         Reqwester { client }
     }
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn get_request_access_token(&mut self) -> Result<&mut Self> {
         let endpoint = "https://getpocket.com/v3/oauth/authorize";
 

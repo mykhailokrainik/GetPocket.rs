@@ -31,30 +31,82 @@ pub struct BulkRequestAdd {
 
 #[async_trait]
 pub trait BulkExt {
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_modify<T>(&self, params: &[T]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_add(&self, params: &[BulkRequestAdd]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_archive(&self, params: &[RequestArchive]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_readd(&self, params: &[RequestReadd]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_favorite(&self, params: &[RequestFavorite]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_unfavorite(&self, params: &[RequestUnfavorite]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_delete(&self, params: &[RequestDelete]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tags_add(&self, params: &[RequestAddTags]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tags_remove(&self, params: &[RequestRemoveTags]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tags_replace(&self, params: &[RequestReplaceTags]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tags_clear(&self, params: &[RequestClearTags]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tag_rename(&self, params: &[RequestRenameTags]) -> Result<BulkRecordModified>;
 
+    #[deprecated(
+        since = "0.3.0",
+        note = "This function will be removed in next version. Please see the README for migration guidance."
+    )]
     async fn bulk_tag_delete(&self, params: &[RequestDeleteTags]) -> Result<BulkRecordModified>;
 }
 
